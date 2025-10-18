@@ -8,8 +8,20 @@ import {
   Container,
 } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
+import { useState } from "react";
+import LoginModal from "../auths/LoginModal";
 
 const Navbar = ({ sidebarWidth }: { sidebarWidth: number }) => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container>
       <AppBar
@@ -55,6 +67,7 @@ const Navbar = ({ sidebarWidth }: { sidebarWidth: number }) => {
               <Button
                 variant="contained"
                 sx={{ bgcolor: "#FFD700", color: "#000", fontWeight: 600 }}
+                onClick={handleOpen}
               >
                 Login
               </Button>
@@ -65,6 +78,7 @@ const Navbar = ({ sidebarWidth }: { sidebarWidth: number }) => {
           </Box>
         </Toolbar>
       </AppBar>
+      <LoginModal open={open} onClose={handleClose} />
     </Container>
   );
 };

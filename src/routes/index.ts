@@ -7,6 +7,8 @@ import HeyvipCrashPage from "../pages/HeyvipCrash";
 import SportsPage from "../pages/Sports";
 import CricketPage from "../pages/Cricket";
 import SebaPage from "../pages/Seba";
+import LoginPage from "../pages/Login";
+import SignupPage from "../pages/Signup";
 
 export const router = createBrowserRouter([
   {
@@ -43,5 +45,13 @@ export const router = createBrowserRouter([
         ],
       },
     ],
+  },
+  {
+    Component: LoginPage,
+    path: "/login-account",
+  },
+  {
+    Component: SignupPage,
+    path: "/create-account",
   },
 ]);
